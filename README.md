@@ -27,6 +27,14 @@ This project is a single-page web application that visualizes pathfinding algori
 
 No build steps or server required.
 
+## Screenshots
+
+### Initial Grid View
+![Initial Grid View](screenshots/home.png)
+
+### Running Pathfinding (Bidirectional A*)
+![Running Pathfinding](screenshots/run.png)
+
 ## Notes & Improvements
 - Bidirectional A* implementation included is a basic version suitable for grid maps. For production-grade usage, consider optimizing with better heuristics, tie-breaking, and faster data structures.
 - You can add weighted cells by modifying `node.weight` directly in the grid (not included in UI yet).
