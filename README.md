@@ -35,6 +35,14 @@ No build steps or server required.
 ### Running Pathfinding (Bidirectional A*)
 ![Running Pathfinding](screenshots/run.png)
 
+### Demo Video
+<video controls width="100%" preload="metadata">
+  <source src="screenshots/Demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+If the video does not appear on GitHub, use this direct link: [Demo.mp4](screenshots/Demo.mp4)
+
 ## Notes & Improvements
 - Bidirectional A* implementation included is a basic version suitable for grid maps. For production-grade usage, consider optimizing with better heuristics, tie-breaking, and faster data structures.
 - You can add weighted cells by modifying `node.weight` directly in the grid (not included in UI yet).
