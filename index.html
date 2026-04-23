@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Pathfinding Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Pathfinding Visualizer</h1>
+    <p class="lead">Visualize BFS, DFS, Dijkstra, A*, and Bidirectional A*. Click/drag to paint walls. Drag start/end to move them.</p>
+
+    <div class="controls">
+      <div class="card">
+        <label for="algorithm">Algorithm</label>
+        <select id="algorithm">
+          <option value="astar">A*</option>
+          <option value="dijkstra">Dijkstra</option>
+          <option value="bfs">BFS</option>
+          <option value="dfs">DFS</option>
+          <option value="biastar">Bidirectional A*</option>
+        </select>
+        <button id="runBtn">Run</button>
+        <button id="resetBtn" class="secondary">Reset Grid</button>
+        <button id="clearBtn" class="secondary">Clear Paths</button>
+        <button id="mazeBtn" class="secondary">Random Maze</button>
+      </div>
+
+      <div class="card">
+        <label for="speed">Speed</label>
+        <input id="speed" type="range" min="5" max="200" value="20">
+        <span id="speedVal">20 ms</span>
+      </div>
+
+      <div class="card">
+        <label>Grid</label>
+        <input id="rows" type="number" min="8" max="40" value="20" style="width:64px">
+        <input id="cols" type="number" min="8" max="60" value="30" style="width:64px">
+        <button id="applySize" class="secondary">Apply Size</button>
+      </div>
+
+      <div class="card" style="margin-left:auto">
+        <div>Visited: <span id="visited">0</span></div>
+        <div style="margin-left:10px">Path length: <span id="pathLen">0</span></div>
+      </div>
+    </div>
+
+    <div class="grid-wrap">
+      <div id="gridContainer" style="overflow:auto"></div>
+      <div class="meta">
+        <div>Click & drag to draw walls. Double-click toggles wall. Keyboard shortcuts below.</div>
+      </div>
+      <div class="note">
+        <strong>Notes:</strong> BFS finds shortest path on unweighted grids. DFS does not guarantee shortest path. A* uses heuristic (Manhattan) to guide search. Bidirectional A* runs two A* searches and meets in middle for faster results on many maps.
+      </div>
+      <div class="note" style="margin-top:8px;">
+        <strong>Keyboard shortcuts:</strong>
+        <span>1:BFS 2:DFS 3:Dijkstra 4:A* 5:Bi-A* | R:Run | C:Clear paths | M:Random maze | +/-:Speed</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
